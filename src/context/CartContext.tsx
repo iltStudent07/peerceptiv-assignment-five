@@ -3,12 +3,16 @@ import cartReducer from '../reducers/cartReducer'
 import type { CartItem, CartAction } from '../types/types'
 
 interface CartContextValue {
-    cart: CartItem
+    cart: CartItem[]
     dispatch: React.Dispatch<CartAction>
 }
 const CartContext = createContext<CartContextValue | undefined>(undefined)
 
-export const CartProvider = ({ children }) => {
+interface CartProviderProps {
+    children: React.ReactNode
+}
+
+export const CartProvider = ({ children }: CartProviderProps) => {
     const [cart, dispatch] = useReducer(cartReducer, [])
 
     return (

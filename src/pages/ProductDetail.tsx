@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom'
 import type { Product } from '../types/types'
+import { useCart } from '../context/CartContext'
 
 function ProductDetail() {
     const { id } = useParams<{ id: string }>()
     const navigate = useNavigate()
     const [product, setProduct] = useState<Product | null>(null)
     const [loading, setLoading] = useState<boolean>(true)
+    const { dispatch } = useCart()
 
     useEffect(() => {
         fetch('/gameSystems.json')
@@ -33,6 +35,7 @@ function ProductDetail() {
             <h1>{product.name}</h1>
             <p><strong>Price:</strong> {product.price}</p>
             <p><strong>Category:</strong> {product.category}</p>
+            <button onClick={() => dispatch({type: 'add', item: product})} style={{ padding: '12px', marginTop: '24px'}}>Add to Cart</button>
         </div>
     )
 }

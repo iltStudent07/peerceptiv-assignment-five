@@ -4,6 +4,7 @@ import Navbar from './Navbar'
 import HomePage from './pages/HomePage'
 import ProductsPage from './pages/ProductsPage'
 import ProductDetail from './pages/ProductDetail'
+import CartPage from './pages/CartPage'
 import NotFound from './pages/NotFound'
 import Header from './components/Header'
 import Footer from './components/Footer'
@@ -23,6 +24,7 @@ function App() {
               <Route path="/" element={<HomePage />} />
               <Route path="/products" element={<ProductsPage />} />
               <Route path="/products/:id" element={<ProductDetail />} />
+              <Route path="/cart" element={<CartPage />}/>
               <Route path="*" element={<NotFound />} />
             </Routes>
           </main>

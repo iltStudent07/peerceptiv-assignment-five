@@ -17,7 +17,8 @@ function Navbar() {
             borderBottom: '2px solid #ddd'
         }}>
             <NavLink to="/" style={linkStyle}>HomePage</NavLink>
-            <NavLink to="products" style={linkStyle}>Products</NavLink>
+            <NavLink to="/products" style={linkStyle}>Products</NavLink>
+            <NavLink to="/cart" style={linkStyle}>Cart</NavLink>
         </nav>
     )
 }
