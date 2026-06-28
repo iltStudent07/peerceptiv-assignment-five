@@ -5,13 +5,16 @@ export interface Product {
     category: string
 }
 
-export interface Cart {
+export interface CartItem {
+    id: string
     item: Product
     itemAmount: number
     totalPrice: number
 }
 
+export type Cart = CartItem[]
+
 export type CartAction =
-    | { type: 'add'; item: string }
+    | { type: 'add'; item: Product }
     | { type: 'delete'; id: string }
-    | { type: 'clear-cart'; id: number; item: string}
+    | { type: 'clear-cart' }
