@@ -25,5 +25,12 @@
         "name": "PS5 Pro", 
         "price": 899.99,
         "category": "game system" 
+    },
+
+    {
+        "id": "5",
+        "name": "Nintendo Switch 2",
+        "price": 499.99,
+        "category":"game system"
     }
 ]
