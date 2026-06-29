@@ -1,0 +1,36 @@
+[
+    { 
+        "id": "1", 
+        "name": "Xbox Series X", 
+        "price": 699.99, 
+        "category": "game system"
+    },
+
+    { 
+        "id": "2", 
+        "name": "Xbox Series S", 
+        "price": 499.99,
+        "category": "game system" 
+    },
+
+    { 
+        "id": "3", 
+        "name": "PS5", 
+        "price": 599.99,
+        "category": "game system" 
+    },
+
+    { 
+        "id": "4", 
+        "name": "PS5 Pro", 
+        "price": 899.99,
+        "category": "game system" 
+    },
+
+    {
+        "id": "5",
+        "name": "Nintendo Switch 2",
+        "price": 499.99,
+        "category":"game system"
+    }
+]
