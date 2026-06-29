@@ -20,8 +20,8 @@ function ProductsPage() {
 
     return (
         <div>
-            <h1>Products</h1>
-            <p style={{ borderBottom: '2px solid #333'}}>Below you'll find all the amazing products we have to offer:</p>
+            <h1>Products:</h1>
+            <p style={{ borderBottom: '2px solid #ddd'}}>Below you'll find all the amazing products we have to offer:</p>
             <div>
                 <h2 style={{padding: '24px'}}>Game Systems:</h2>
                 <ul style={{listStyleType: 'none', textAlign: 'left'}}>
