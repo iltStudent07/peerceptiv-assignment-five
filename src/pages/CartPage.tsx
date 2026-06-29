@@ -8,12 +8,12 @@ function CartPage(){
     return (
         <div>
             <h1>Your Cart: {totalItems}</h1>
-            <h2>Total Amount: {roundPrice}</h2>
+            <h2>Total Amount: ${roundPrice}</h2>
             <ul style={{ listStyleType: 'none'}}>
                 {cart.map(cartItem => (
-                    <li key={cartItem.id}>{cartItem.item.name} -- {cartItem.item.price} x {cartItem.itemAmount}
+                    <li key={cartItem.id} style={{ borderBottom: '1px solid #ddd', padding: '8px', marginRight: '24px' }}>{cartItem.item.name} - {cartItem.item.price} x {cartItem.itemAmount}
 
-                    <button onClick={() => dispatch({ type: 'delete', id: cartItem.id})}>Remove</button>
+                    <button onClick={() => dispatch({ type: 'delete', id: cartItem.id})} style={{ marginLeft: '36px', backgroundColor: 'red', color: 'white', border: '2px solid black'}}>Remove</button>
                     </li>
                 ))}
             </ul>

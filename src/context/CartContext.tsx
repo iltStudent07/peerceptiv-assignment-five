@@ -1,6 +1,7 @@
-import React, {createContext, useContext, useReducer } from 'react'
+import React, {createContext, useContext, useReducer, useEffect } from 'react'
 import cartReducer from '../reducers/cartReducer'
-import type { CartItem, CartAction } from '../types/types'
+import type { Cart, CartItem, CartAction } from '../types/types'
+import { useLocalStorage } from '../hooks/useLocalStorage'
 
 interface CartContextValue {
     cart: CartItem[]
@@ -12,9 +13,15 @@ interface CartProviderProps {
     children: React.ReactNode
 }
 
-export const CartProvider = ({ children }: CartProviderProps) => {
-    const [cart, dispatch] = useReducer(cartReducer, [])
 
+
+export const CartProvider = ({ children }: CartProviderProps) => {
+    const [storedCart, setStoredCart] = useLocalStorage<Cart>('cart',[])
+    const [cart, dispatch] = useReducer(cartReducer, storedCart)
+
+    useEffect(() => {
+        setStoredCart(cart)
+    }, [cart, setStoredCart])
     return (
         <CartContext.Provider value={{ cart, dispatch }}>
             {children}
